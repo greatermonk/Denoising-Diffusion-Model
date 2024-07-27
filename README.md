@@ -13,8 +13,10 @@ Three different diffusion schedules are defined: linear, cosine, and offset cosi
 
 
 
+
 3)Sinusoidal Embeddings:
 Sinusoidal embeddings are used to encode noise variances for better diffusion process handling.
+
 
 
 
@@ -23,10 +25,12 @@ A UNet model is built with residual blocks, downsampling, and upsampling blocks 
 
 
 
+
 5)Diffusion Model Class:
 A)The DiffusionModel class inherits from keras.Model and integrates the UNet model.
 
 It includes methods for:
+
 i)Normalizing and denormalizing images.
 
 ii)Performing the denoising process.
@@ -38,7 +42,9 @@ iv)Training and testing steps for model optimization.
 v)The call method is defined to handle the inputs and forward pass.
 
 
+
 B)Training and Evaluation:
+
 i)The model is compiled with the AdamW optimizer and mean absolute error loss.
 
 ii)The model is trained on the CIFAR-10 dataset using the fit method.
@@ -47,4 +53,5 @@ iii)TensorBoard callback is used for logging.
 
 
 6)Image Generation:
+
 After training, the model generates new images by reversing the diffusion process starting from random noise.
